@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{181B8B4E-ECE8-4994-9145-3D269C2EC1BB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Domarn</RootNamespace>
+    <AssemblyName>Domarn</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DEBUG_MESSAGES</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LiteNetLib\BaseChannel.cs" />
+    <Compile Include="LiteNetLib\ConnectionRequest.cs" />
+    <Compile Include="LiteNetLib\INetEventListener.cs" />
+    <Compile Include="LiteNetLib\NatPunchModule.cs" />
+    <Compile Include="LiteNetLib\NetConstants.cs" />
+    <Compile Include="LiteNetLib\NetDebug.cs" />
+    <Compile Include="LiteNetLib\NetExceptions.cs" />
+    <Compile Include="LiteNetLib\NetManager.cs" />
+    <Compile Include="LiteNetLib\NetPacket.cs" />
+    <Compile Include="LiteNetLib\NetPacketPool.cs" />
+    <Compile Include="LiteNetLib\NetPeer.cs" />
+    <Compile Include="LiteNetLib\NetPeerCollection.cs" />
+    <Compile Include="LiteNetLib\NetSocket.cs" />
+    <Compile Include="LiteNetLib\NetStatistics.cs" />
+    <Compile Include="LiteNetLib\NetUtils.cs" />
+    <Compile Include="LiteNetLib\ReliableChannel.cs" />
+    <Compile Include="LiteNetLib\SequencedChannel.cs" />
+    <Compile Include="LiteNetLib\SimpleChannel.cs" />
+    <Compile Include="LiteNetLib\Utils\FastBitConverter.cs" />
+    <Compile Include="LiteNetLib\Utils\INetSerializable.cs" />
+    <Compile Include="LiteNetLib\Utils\NetDataReader.cs" />
+    <Compile Include="LiteNetLib\Utils\NetDataWriter.cs" />
+    <Compile Include="LiteNetLib\Utils\NetPacketProcessor.cs" />
+    <Compile Include="LiteNetLib\Utils\NetSerializer.cs" />
+    <Compile Include="LiteNetLib\Utils\NetSerializerExceptions.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LiteNetLib\LiteNetLib.csproj" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
